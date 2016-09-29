@@ -6,8 +6,3 @@ merge-base somewhere around tag 6.0.2. I've gone in and tweaked the source in a
 few odd places and changed the config.h keybindings significantly. If they seem
 incomprehensible, I use the Dvorak keyboard layout and have a really janky
 workflow.
-
-### TODO
-- Look into using ncurses (?) to implement limited emacs-like (`<C-A>`, `<C-E>`
-  for beginning and end of line for starters, maybe `<C-B>`, `<C-F>` too) cursor
-  movement.
