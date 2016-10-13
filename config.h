@@ -10,7 +10,7 @@ static const char selbgcolor[]      = "#000000";
 static const char selfgcolor[]      = "#49e20e";
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const Bool showbar           = False;     /* False means no bar */
+static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
@@ -60,10 +60,8 @@ static const char *tptoggle[] = { "tptoggle", NULL };
 static const char *transtoggle[] = { "transToggle", NULL };
 static const char *compmgrToggle[] = { "compmgrToggle", NULL };
 static const char *rebg[] = { "rebg", NULL };
-/* static const char *suspend[] = { "suspend_me", NULL }; */
-static const char *gdict[] = { "goldendict", NULL };
+static const char *xscreensaver[] = { "xscreensaver-command", "-lock", NULL };
 
-/* #define XF86Sleep 0x1008ff2f */
 static Key keys[] = {
     /* modifier                     key        function        argument */
     { MODKEY,                       XK_F1,     spawn,          {.v = changekeys } },
@@ -80,8 +78,6 @@ static Key keys[] = {
     { MODKEY,                       XK_q,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_period, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_comma,  spawn,          {.v = chromium } },
-    { MODKEY,                       XK_u,      spawn,          {.v = gdict } },
-    /* { 0,                            XF86Sleep, spawn,          {.v = suspend } }, */
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -113,7 +109,10 @@ static Key keys[] = {
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
     { MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
+    { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensaver } },
 };
+
+
 
 /* button definitions */
 /* click can be ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
