@@ -60,6 +60,7 @@ static const char *tptoggle[] = { "tptoggle", NULL };
 static const char *transtoggle[] = { "transToggle", NULL };
 static const char *compmgrToggle[] = { "compmgrToggle", NULL };
 static const char *rebg[] = { "rebg", NULL };
+static const char *gdict[] = { "goldendict", NULL };
 static const char *xscreensaver[] = { "xscreensaver-command", "-lock", NULL };
 
 static Key keys[] = {
@@ -78,6 +79,7 @@ static Key keys[] = {
     { MODKEY,                       XK_q,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_period, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_comma,  spawn,          {.v = chromium } },
+    { MODKEY,                       XK_u,      spawn,          {.v = gdict } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
