@@ -61,6 +61,8 @@ static const char *transtoggle[] = { "transToggle", NULL };
 static const char *compmgrToggle[] = { "compmgrToggle", NULL };
 static const char *rebg[] = { "rebg", NULL };
 static const char *gdict[] = { "goldendict", NULL };
+static const char *paste_x[] = { "paste_x", NULL };
+static const char *paste_c[] = { "paste_x", "-c", NULL };
 static const char *xscreensaver[] = { "xscreensaver-command", "-lock", NULL };
 
 static Key keys[] = {
@@ -87,7 +89,7 @@ static Key keys[] = {
     { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
     { MODKEY,                       XK_h,      setmfact,       {.f = -0.02} },
     { MODKEY,                       XK_l,      setmfact,       {.f = +0.02} },
-    { MODKEY,                       XK_Return, zoom,           {0} },
+    { MODKEY|ShiftMask,             XK_h,      zoom,           {0} },
     { MODKEY,                       XK_Tab,    view,           {0} },
     { MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
     { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -112,6 +114,8 @@ static Key keys[] = {
     TAGKEYS(                        XK_9,                      8)
     { MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
     { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensaver } },
+    { MODKEY,                       XK_Return, spawn,          {.v = paste_x } },
+    { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = paste_c } },
 };
 
 
