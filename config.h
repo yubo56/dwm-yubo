@@ -63,6 +63,7 @@ static const char *rebg[] = { "rebg", NULL };
 static const char *gdict[] = { "goldendict", NULL };
 static const char *paste_x[] = { "paste_x", NULL };
 static const char *paste_c[] = { "paste_x", "-c", NULL };
+static const char *paste_s[] = { "paste_x", "-shrug", NULL };
 static const char *xscreensaver[] = { "xscreensaver-command", "-lock", NULL };
 
 static Key keys[] = {
@@ -116,6 +117,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensaver } },
     { MODKEY,                       XK_Return, spawn,          {.v = paste_x } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = paste_c } },
+    { MODKEY,                       XK_s,      spawn,          {.v = paste_s } },
 };
 
 
