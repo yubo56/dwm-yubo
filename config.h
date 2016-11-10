@@ -64,6 +64,7 @@ static const char *gdict[] = { "goldendict", NULL };
 static const char *paste_x[] = { "paste_x", NULL };
 static const char *paste_c[] = { "paste_x", "-c", NULL };
 static const char *paste_s[] = { "paste_x", "-shrug", NULL };
+static const char *paste_t[] = { "paste_x", "-table", NULL };
 static const char *xscreensaver[] = { "xscreensaver-command", "-lock", NULL };
 
 static Key keys[] = {
@@ -113,11 +114,12 @@ static Key keys[] = {
     TAGKEYS(                        XK_7,                      6)
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
+    { MODKEY|ShiftMask,             XK_x,      quit,           {0} },
     { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensaver } },
     { MODKEY,                       XK_Return, spawn,          {.v = paste_x } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = paste_c } },
     { MODKEY,                       XK_s,      spawn,          {.v = paste_s } },
+    { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = paste_t } },
 };
 
 
