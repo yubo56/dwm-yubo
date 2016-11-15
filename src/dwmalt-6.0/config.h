@@ -47,7 +47,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "-*-terminus-medium-*-*-*-*-180-*-*-*-*-*-*", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "xterm", NULL };
+static const char *termcmd[]  = { "urxvt", NULL };
 static const char *chromium[] = { "chromium", "--auth-server-whitelist=*.caltech.edu", NULL };
 static const char *volup[] = { "volup", NULL };
 static const char *voldown[] = { "voldown", NULL };
