@@ -2,8 +2,8 @@
 
 /* appearance */
 /* static const char font[]            = "Baekmuk Batang Bold 16"; */
-static const char font[]            = "-*-terminus-medium-r-*-*-20-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#444444";
+static const char font[]            = "Terminus Medium 13";
+static const char normbordercolor[] = "#000000";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#49e20e";
 static const char selbordercolor[]  = "#49e20e";
