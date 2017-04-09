@@ -78,7 +78,6 @@ static Key keys[] = {
     { MODKEY,                       XK_F10,    spawn,          {.v = volup} },
     { MODKEY,                       XK_F11,    spawn,          {.v = voltoggle } },
     { MODKEY,                       XK_F12,    spawn,          {.v = tptoggle } },
-    { MODKEY,                       XK_q,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_period, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_comma,  spawn,          {.v = chromium } },
     { MODKEY,                       XK_u,      spawn,          {.v = gdict } },
@@ -116,6 +115,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensaver } },
     { MODKEY,                       XK_Return, spawn,          {.v = paste_x } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = paste_c } },
+    { MODKEY,                   XK_apostrophe, spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_s,      spawn,          {.v = quick_type } },
 };
 
