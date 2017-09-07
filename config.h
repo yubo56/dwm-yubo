@@ -51,21 +51,22 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "-*-terminus-medium-*-*-*-*-180-*-*-*-*-*-*", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
-static const char *chromium[] = { "chromium", "--auth-server-whitelist=*.caltech.edu", NULL };
-static const char *volup[] = { "volup", NULL };
-static const char *voldown[] = { "voldown", NULL };
-static const char *voltoggle[] = { "voltoggle", NULL };
+static const char *chromium[] = { "chromium", NULL };
 static const char *brightup[] = { "brightup", NULL };
 static const char *brightdown[] = { "brightdown", NULL };
 static const char *changekeys[] = { "changekeys", NULL };
 static const char *toggleInt[] = { "toggleInt", NULL };
 static const char *tptoggle[] = { "tptoggle", NULL };
-static const char *rebg[] = { "rebg", NULL };
 static const char *gdict[] = { "goldendict", NULL };
 static const char *paste_x[] = { "paste_x", NULL };
 static const char *paste_c[] = { "paste_x", "-c", NULL };
 static const char *quick_type[] = { "quick_type", "_run", NULL };
+
 static const char *xscreensaver[] = { "xscreensaver-command", "-lock", NULL };
+static const char *rebg[] = { "feh", "--bg-fill", "--no-fehbg", "-z", "/home/yssu/walls", NULL };
+static const char *volup[] = { "amixer", "set", "Master", "3%+", NULL };
+static const char *voldown[] = { "amixer", "set", "Master", "3%-", NULL };
+static const char *voltoggle[] = { "amixer", "set", "Master", "toggle", NULL };
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
