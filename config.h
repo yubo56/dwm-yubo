@@ -51,7 +51,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "-*-terminus-medium-*-*-*-*-180-*-*-*-*-*-*", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
-static const char *chromium[] = { "LD_LIBRARY_PATH=/opt/lib", "chromium", NULL };
+static const char *chromium[] = { "chromium", NULL };
 static const char *brightup[] = { "brightup", NULL };
 static const char *brightdown[] = { "brightdown", NULL };
 static const char *changekeys[] = { "changekeys", NULL };
@@ -63,7 +63,7 @@ static const char *paste_c[] = { "paste_x", "-c", NULL };
 static const char *quick_type[] = { "quick_type", "_run", NULL };
 
 static const char *xscreensaver[] = { "xscreensaver-command", "-lock", NULL };
-static const char *rebg[] = { "feh", "--bg-fill", "--no-fehbg", "-z", "/home/yssu/walls", NULL };
+static const char *rebg[] = { "rebg", NULL };
 static const char *volup[] = { "amixer", "set", "Master", "3%+", NULL };
 static const char *voldown[] = { "amixer", "set", "Master", "3%-", NULL };
 static const char *voltoggle[] = { "amixer", "set", "Master", "toggle", NULL };
