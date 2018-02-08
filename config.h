@@ -51,7 +51,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "-*-terminus-medium-*-*-*-*-180-*-*-*-*-*-*", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
-static const char *chromium[] = { "chromium", NULL };
+static const char *chromium[] = { "LD_LIBRARY_PATH=/opt/lib", "chromium", NULL };
 static const char *brightup[] = { "brightup", NULL };
 static const char *brightdown[] = { "brightdown", NULL };
 static const char *changekeys[] = { "changekeys", NULL };
