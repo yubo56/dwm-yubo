@@ -51,7 +51,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "-*-terminus-medium-*-*-*-*-180-*-*-*-*-*-*", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
-static const char *chromium[] = { "chromium", NULL };
+static const char *brave[] = { "brave-beta", NULL };
 static const char *brightup[] = { "brightup", NULL };
 static const char *brightdown[] = { "brightdown", NULL };
 static const char *changekeys[] = { "changekeys", NULL };
@@ -80,7 +80,7 @@ static Key keys[] = {
     { MODKEY,                       XK_F11,    spawn,          {.v = voltoggle } },
     { MODKEY,                       XK_F12,    spawn,          {.v = tptoggle } },
     { MODKEY,                       XK_period, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_comma,  spawn,          {.v = chromium } },
+    { MODKEY,                       XK_comma,  spawn,          {.v = brave } },
     { MODKEY,                       XK_u,      spawn,          {.v = gdict } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
