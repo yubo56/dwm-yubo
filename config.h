@@ -63,7 +63,8 @@ static const char *paste_x[] = { "paste_x", NULL };
 static const char *paste_c[] = { "paste_x", "-c", NULL };
 static const char *quick_type[] = { "quick_type", "_run", NULL };
 
-static const char *xscreensaver[] = { "xscreensaver-command", "-lock", NULL };
+static const char *xscreensaver_custom[] = { "xscreensaver-error", "-lock", NULL };
+static const char *xscreensaver_blank[] = { "xscreensaver-blank", "-lock", NULL };
 static const char *rebg[] = { "rebg", NULL };
 static const char *volup[] = { "amixer", "set", "Master", "3%+", NULL };
 static const char *voldown[] = { "amixer", "set", "Master", "3%-", NULL };
@@ -114,7 +115,8 @@ static Key keys[] = {
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
     { MODKEY|ShiftMask,             XK_x,      quit,           {0} },
-    { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensaver } },
+    { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensaver_custom } },
+    { MODKEY|ShiftMask,             XK_r,      spawn,          {.v = xscreensaver_blank } },
     { MODKEY,                       XK_Return, spawn,          {.v = paste_x } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = paste_c } },
     { MODKEY,                   XK_apostrophe, spawn,          {.v = dmenucmd } },
