@@ -52,7 +52,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "-*-terminus-medium-*-*-*-*-180-*-*-*-*-*-*", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
-static const char *brave[] = { "brave-beta", NULL };
+static const char *browser[] = { "browser-launch", NULL };
 static const char *brightup[] = { "brightup", NULL };
 static const char *brightdown[] = { "brightdown", NULL };
 static const char *changekeys[] = { "changekeys", NULL };
@@ -82,7 +82,7 @@ static Key keys[] = {
     { MODKEY,                       XK_F11,    spawn,          {.v = voltoggle } },
     { MODKEY,                       XK_F12,    spawn,          {.v = tptoggle } },
     { MODKEY,                       XK_period, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_comma,  spawn,          {.v = brave } },
+    { MODKEY,                       XK_comma,  spawn,          {.v = browser } },
     { MODKEY,                       XK_u,      spawn,          {.v = gdict } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -116,7 +116,7 @@ static Key keys[] = {
     TAGKEYS(                        XK_9,                      8)
     { MODKEY|ShiftMask,             XK_x,      quit,           {0} },
     { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensaver_custom } },
-    { MODKEY|ShiftMask,             XK_r,      spawn,          {.v = xscreensaver_blank } },
+    { MODKEY|ShiftMask,             XK_n,      spawn,          {.v = xscreensaver_blank } },
     { MODKEY,                       XK_Return, spawn,          {.v = paste_x } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = paste_c } },
     { MODKEY,                   XK_apostrophe, spawn,          {.v = dmenucmd } },
