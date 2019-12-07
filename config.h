@@ -2,7 +2,8 @@
 
 /* appearance */
 /* static const char font[]            = "Baekmuk Batang Bold 16"; */
-static const char font[]            = "Terminus Medium 14";
+static const char font[]            = "Terminus Medium 13";
+/* static const char font[]            = "Source Code Pro 14"; */
 static const char normbordercolor[] = "#000000";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#49e20e";
@@ -67,8 +68,8 @@ static const char *quick_type[] = { "dwm_quick_type", "_run", NULL };
 static const char *xscreensaver_custom[] = { "dwm_xscreensaver_error", "-lock", NULL };
 static const char *xscreensaver_blank[] = { "dwm_xscreensaver_blank", "-lock", NULL };
 static const char *rebg[] = { "dwm_rebg", NULL };
-static const char *volup[] = { "amixer", "set", "Master", "3%+", NULL };
-static const char *voldown[] = { "amixer", "set", "Master", "3%-", NULL };
+static const char *volup[] = { "amixer", "set", "Master", "1%+", NULL };
+static const char *voldown[] = { "amixer", "set", "Master", "1%-", NULL };
 static const char *voltoggle[] = { "amixer", "set", "Master", "toggle", NULL };
 
 static Key keys[] = {
