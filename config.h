@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-/* static const char font[]            = "Baekmuk Batang Bold 16"; */
-static const char font[]            = "Terminus Medium 13";
+static const char font[]            = "Baekmuk Batang Bold 16";
+/* static const char font[]            = "Terminus Medium 13"; */
 /* static const char font[]            = "Source Code Pro 14"; */
 static const char normbordercolor[] = "#000000";
 static const char normbgcolor[]     = "#000000";
@@ -17,8 +17,8 @@ static const Bool topbar            = True;     /* False means bottom bar */
 static const Bool statusmarkup      = True;     /* True means use pango markup in status message */
 
 /* tagging */
-/* static const char *tags[] = { "일", "이", "삼", "사", "오", "육", "질", "팔", "구" }; */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+/* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
+static const char *tags[] = { "일", "이", "삼", "사", "오", "육", "칠", "팔", "구" };
 
 static const Rule rules[] = {
    /* class      instance    title       tags mask     isfloating   monitor */
