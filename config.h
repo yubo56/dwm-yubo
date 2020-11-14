@@ -68,9 +68,9 @@ static const char *quick_type[] = { "dwm_quick_type", "_run", NULL };
 static const char *xscreensaver_custom[] = { "dwm_xscreensaver_error", "-lock", NULL };
 static const char *xscreensaver_blank[] = { "dwm_xscreensaver_blank", "-lock", NULL };
 static const char *rebg[] = { "dwm_rebg", NULL };
-static const char *volup[] = { "amixer", "set", "Master", "1%+", NULL };
-static const char *voldown[] = { "amixer", "set", "Master", "1%-", NULL };
-static const char *voltoggle[] = { "amixer", "set", "Master", "toggle", NULL };
+static const char *volup[] = { "dwm_revol", "up", NULL };
+static const char *voldown[] = { "dwm_revol", "down", NULL };
+static const char *voltoggle[] = { "dwm_revol", "toggle", NULL };
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
