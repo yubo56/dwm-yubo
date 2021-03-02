@@ -64,6 +64,7 @@ static const char *gdict[] = { "goldendict", NULL };
 static const char *paste_x[] = { "dwm_paste_x", NULL };
 static const char *paste_c[] = { "dwm_paste_x", "-c", NULL };
 static const char *quick_type[] = { "dwm_quick_type", "_run", NULL };
+static const char *killibus[] = { "ibus-daemon", "-drx", NULL };
 
 static const char *xscreensaver_custom[] = { "dwm_xscreensaver_error", "-lock", NULL };
 static const char *xscreensaver_blank[] = { "dwm_xscreensaver_blank", "-lock", NULL };
@@ -130,6 +131,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = paste_c } },
     { MODKEY,                   XK_apostrophe, spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_s,      spawn,          {.v = quick_type } },
+    { MODKEY|ShiftMask,             XK_i,      spawn,          {.v = killibus } },
 };
 
 /* button definitions */
