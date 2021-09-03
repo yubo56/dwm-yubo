@@ -64,7 +64,7 @@ static const char *gdict[] = { "goldendict", NULL };
 static const char *paste_x[] = { "dwm_paste_x", NULL };
 static const char *paste_c[] = { "dwm_paste_x", "-c", NULL };
 static const char *quick_type[] = { "dwm_quick_type", "_run", NULL };
-static const char *killibus[] = { "ibus-daemon", "-drx", NULL };
+static const char *killibus[] = { "dwm_re_ibus", NULL };
 
 static const char *xscreensaver_custom[] = { "dwm_xscreensaver_error", "-lock", NULL };
 static const char *xscreensaver_blank[] = { "dwm_xscreensaver_blank", "-lock", NULL };
