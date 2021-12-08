@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const char font[]            = "Baekmuk Batang Bold 16";
@@ -74,46 +75,57 @@ static const char *voldown[] = { "dwm_revol", "down", NULL };
 static const char *voltoggle[] = { "dwm_revol", "toggle", NULL };
 
 static Key keys[] = {
-    /* modifier                     key        function        argument */
-    { MODKEY,                       XK_F1,     spawn,          {.v = changekeys } },
-    { MODKEY|ShiftMask,             XK_F1,     spawn,          {.v = toggleInt } },
-    { MODKEY,                       XK_F2,     spawn,          {.v = brightdown } },
-    { MODKEY,                       XK_F3,     spawn,          {.v = brightup } },
-    { MODKEY,                       XK_F5,     spawn,          {.v = rebg } },
-    { MODKEY,                       XK_F9,     spawn,          {.v = voldown } },
-    { MODKEY,                       XK_F10,    spawn,          {.v = volup} },
-    { MODKEY,                       XK_F11,    spawn,          {.v = voltoggle } },
-    { MODKEY,                       XK_F12,    spawn,          {.v = tptoggle } },
-    { MODKEY,                       XK_period, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_comma,  spawn,          {.v = browser } },
-    { MODKEY,                       XK_u,      spawn,          {.v = gdict } },
-    { MODKEY,                       XK_b,      togglebar,      {0} },
-    { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-    { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-    { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-    { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-    { MODKEY,                       XK_h,      setmfact,       {.f = -0.02} },
-    { MODKEY,                       XK_l,      setmfact,       {.f = +0.02} },
-    { MODKEY|ShiftMask,             XK_h,      zoom,           {0} },
-    { MODKEY,                       XK_Tab,    view,           {0} },
-    { MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-    { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-    { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-    { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-    { MODKEY,                       XK_space,  setlayout,      {0} },
-    { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-    { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-    { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-    /* { MODKEY,                       XK_c,      focusmon,       {.i = -1 } }, */
-    /* { MODKEY,                       XK_r,      focusmon,       {.i = +1 } }, */
-    /* { MODKEY|ShiftMask,             XK_c,      tagmon,         {.i = -1 } }, */
-    /* { MODKEY|ShiftMask,             XK_r,      tagmon,         {.i = +1 } }, */
-    { MODKEY,                       XK_c,      focusmon,       {.i = +1 } },
-    { MODKEY,                       XK_r,      focusmon,       {.i = -1 } },
-    { MODKEY|ShiftMask,             XK_c,      tagmon,         {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_r,      tagmon,         {.i = -1 } },
-    { MODKEY,                       XK_g,      sendallmon,     {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_g,      sendall,        {.i = +1 } },
+    /* modifier                     key                         function        argument */
+    { MODKEY,                       XK_F1,                      spawn,          {.v = changekeys } },
+    { MODKEY|ShiftMask,             XK_F1,                      spawn,          {.v = toggleInt } },
+    { MODKEY,                       XK_F2,                      spawn,          {.v = brightdown } },
+    { MODKEY,                       XK_F3,                      spawn,          {.v = brightup } },
+    { MODKEY,                       XK_F5,                      spawn,          {.v = rebg } },
+    { MODKEY,                       XK_F9,                      spawn,          {.v = voldown } },
+    { MODKEY,                       XK_F10,                     spawn,          {.v = volup} },
+    { MODKEY,                       XK_F11,                     spawn,          {.v = voltoggle } },
+    { MODKEY,                       XK_F9,                      spawn,          {.v = voldown } },
+    { MODKEY,                       XK_F10,                     spawn,          {.v = volup} },
+    { 0,                            XF86XK_AudioMute,           spawn,          {.v = voltoggle } },
+    { 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = voldown } },
+    { 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = volup} },
+    { MODKEY,                       XK_F12,                     spawn,          {.v = tptoggle } },
+    { MODKEY,                       XK_period,                  spawn,          {.v = termcmd } },
+    { MODKEY,                       XK_comma,                   spawn,          {.v = browser } },
+    { MODKEY,                       XK_u,                       spawn,          {.v = gdict } },
+    { MODKEY,                       XK_b,                       togglebar,      {0} },
+    { MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
+    { MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
+    { MODKEY,                       XK_i,                       incnmaster,     {.i = +1 } },
+    { MODKEY,                       XK_d,                       incnmaster,     {.i = -1 } },
+    { MODKEY,                       XK_h,                       setmfact,       {.f = -0.02} },
+    { MODKEY,                       XK_l,                       setmfact,       {.f = +0.02} },
+    { MODKEY|ShiftMask,             XK_h,                       zoom,           {0} },
+    { MODKEY,                       XK_Tab,                     view,           {0} },
+    { MODKEY|ShiftMask,             XK_q,                       killclient,     {0} },
+    { MODKEY,                       XK_t,                       setlayout,      {.v = &layouts[0]} },
+    { MODKEY,                       XK_f,                       setlayout,      {.v = &layouts[1]} },
+    { MODKEY,                       XK_m,                       setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                       XK_space,                   setlayout,      {0} },
+    { MODKEY|ShiftMask,             XK_space,                   togglefloating, {0} },
+    { MODKEY,                       XK_0,                       view,           {.ui = ~0 } },
+    { MODKEY|ShiftMask,             XK_0,                       tag,            {.ui = ~0 } },
+    { MODKEY,                       XK_c,                       focusmon,       {.i = +1 } },
+    { MODKEY,                       XK_r,                       focusmon,       {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_c,                       tagmon,         {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_r,                       tagmon,         {.i = -1 } },
+    { MODKEY,                       XK_g,                       sendallmon,     {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_g,                       sendall,        {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_x,                       quit,           {0} },
+    { MODKEY|ShiftMask,             XK_l,                       spawn,          {.v = xscreensaver_custom } },
+    { MODKEY|ShiftMask,             XK_n,                       spawn,          {.v = xscreensaver_blank } },
+    { MODKEY,                       XK_n,                       spawn,          {.v = toggle_transp } },
+    { MODKEY,                       XK_Return,                  spawn,          {.v = paste_x } },
+    { MODKEY|ShiftMask,             XK_Return,                  spawn,          {.v = paste_c } },
+    { MODKEY,                       XK_apostrophe,              spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_s,                       spawn,          {.v = quick_type } },
+    { MODKEY|ShiftMask,             XK_i,                       spawn,          {.v = killibus } },
+
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
     TAGKEYS(                        XK_3,                      2)
@@ -123,15 +135,6 @@ static Key keys[] = {
     TAGKEYS(                        XK_7,                      6)
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask,             XK_x,      quit,           {0} },
-    { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensaver_custom } },
-    { MODKEY|ShiftMask,             XK_n,      spawn,          {.v = xscreensaver_blank } },
-    { MODKEY,                       XK_n,      spawn,          {.v = toggle_transp } },
-    { MODKEY,                       XK_Return, spawn,          {.v = paste_x } },
-    { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = paste_c } },
-    { MODKEY,                   XK_apostrophe, spawn,          {.v = dmenucmd } },
-    { MODKEY,                       XK_s,      spawn,          {.v = quick_type } },
-    { MODKEY|ShiftMask,             XK_i,      spawn,          {.v = killibus } },
 };
 
 /* button definitions */
