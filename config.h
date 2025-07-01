@@ -55,6 +55,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "-*-terminus-medium-*-*-*-*-180-*-*-*-*-*-*", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *browser[] = { "dwm_browser_launch", NULL };
+static const char *ibus[] = { "ibus-daemon", "-drx", NULL };
 static const char *toggle_transp[] = { "dwm_set_transp", NULL };
 static const char *brightup[] = { "dwm_brightup", NULL };
 static const char *brightdown[] = { "dwm_brightdown", NULL };
@@ -94,6 +95,7 @@ static Key keys[] = {
     { MODKEY,                       XK_F12,                     spawn,          {.v = tptoggle } },
     { MODKEY,                       XK_period,                  spawn,          {.v = termcmd } },
     { MODKEY,                       XK_comma,                   spawn,          {.v = browser } },
+    { MODKEY,                       XK_p,                       spawn,          {.v = ibus } },
     { MODKEY,                       XK_u,                       spawn,          {.v = gdict } },
     { MODKEY,                       XK_b,                       togglebar,      {0} },
     { MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
