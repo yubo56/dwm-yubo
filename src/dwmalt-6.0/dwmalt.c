@@ -141,7 +141,7 @@ typedef struct {
 } Layout;
 
 struct Monitor {
-    char ltsymbol[16];
+    char ltsymbol[100];
     float mfact;
     int nmaster;
     int num;
@@ -1207,16 +1207,17 @@ maprequest(XEvent *e) {
 
 void
 monocle(Monitor *m) {
-    unsigned int n = 0;
+    unsigned int n = 0, ndivs, i, mw, tx;
     Client *c;
 
     for(c = m->clients; c; c = c->next)
         if(ISVISIBLE(c))
             n++;
-    if(n > 0) /* override layout symbol */
-        snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
-    for(c = nexttiled(m->clients); c; c = nexttiled(c->next))
-        resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, False);
+    ndivs = MIN(n, m->nmaster + 1);
+    mw = m->ww / ndivs;
+    snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d/%d]", n, m->nmaster + 1);
+    for(i = tx = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+        resize(c, m->wx + (MIN(i, ndivs - 1) *  mw), m->wy, mw - 2 * c->bw, m->wh - 2 * c->bw, False);
 }
 
 void
@@ -1761,6 +1762,7 @@ tile(Monitor *m) {
         mw = m->nmaster ? m->ww * m->mfact : 0;
     else
         mw = m->ww;
+    snprintf(m->ltsymbol, sizeof m->ltsymbol, "(%d/%d)", n, m->nmaster);
     for(i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
         if(i < m->nmaster) {
             h = (m->wh - my) / (MIN(n, m->nmaster) - i);
