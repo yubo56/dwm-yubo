@@ -1213,6 +1213,8 @@ monocle(Monitor *m) {
     for(c = m->clients; c; c = c->next)
         if(ISVISIBLE(c))
             n++;
+    if(n == 0)
+        return;
     ndivs = MIN(n, m->nmaster + 1);
     mw = m->ww / ndivs;
     snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d/%d]", n, m->nmaster + 1);
@@ -1755,6 +1757,7 @@ tile(Monitor *m) {
     Client *c;
 
     for(n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+    snprintf(m->ltsymbol, sizeof m->ltsymbol, "(%d/%d)", n, m->nmaster);
     if(n == 0)
         return;
 
@@ -1762,7 +1765,6 @@ tile(Monitor *m) {
         mw = m->nmaster ? m->ww * m->mfact : 0;
     else
         mw = m->ww;
-    snprintf(m->ltsymbol, sizeof m->ltsymbol, "(%d/%d)", n, m->nmaster);
     for(i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
         if(i < m->nmaster) {
             h = (m->wh - my) / (MIN(n, m->nmaster) - i);
