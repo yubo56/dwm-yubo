@@ -138,6 +138,7 @@ typedef struct {
 typedef struct {
     const char *symbol;
     void (*arrange)(Monitor *);
+    int new_nmaster;
 } Layout;
 
 struct Monitor {
@@ -158,7 +159,7 @@ struct Monitor {
     Client *stack;
     Monitor *next;
     Window barwin;
-    const Layout *lt[2];
+    const Layout *lt[3];
 };
 
 typedef struct {
@@ -496,7 +497,7 @@ checkotherwm(void) {
 void
 cleanup(void) {
     Arg a = {.ui = ~0};
-    Layout foo = { "", NULL };
+    Layout foo = { "", NULL, 1 };
     Monitor *m;
     int i;
 
@@ -1217,7 +1218,7 @@ monocle(Monitor *m) {
         return;
     ndivs = MIN(n, m->nmaster + 1);
     mw = m->ww / ndivs;
-    snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d/%d]", n, m->nmaster + 1);
+    snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d/%d]", n, m->nmaster);
     for(i = tx = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
         resize(c, m->wx + (MIN(i, ndivs - 1) *  mw), m->wy, mw - 2 * c->bw, m->wh - 2 * c->bw, False);
 }
@@ -1584,6 +1585,7 @@ setlayout(const Arg *arg) {
     if(arg && arg->v)
         selmon->lt[selmon->sellt] = (Layout *)arg->v;
     strncpy(selmon->ltsymbol, selmon->lt[selmon->sellt]->symbol, sizeof selmon->ltsymbol);
+    selmon->nmaster = selmon->lt[selmon->sellt]->new_nmaster;
     if(selmon->sel)
         arrange(selmon);
     else

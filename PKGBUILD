@@ -34,6 +34,7 @@ package() {
   install -m644 -D LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
   install -m644 -D README $pkgdir/usr/share/doc/$pkgname/README
   install -m644 -D $srcdir/dwmalt.desktop $pkgdir/usr/share/xsessions/dwmalt.desktop
+  rm config.h
 }
 md5sums=('482c9b01f1c2f8fe728610b40f88d7c9'
          '55239b76ea3783021c422aff8c4a96c2'
