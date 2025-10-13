@@ -63,11 +63,11 @@ static const char *changekeys[] = { "dwm_changekeys", NULL };
 static const char *toggleInt[] = { "dwm_toggle_keybd", NULL };
 static const char *togglecompact[] = { "dwm_toggle_compact", NULL };
 static const char *tptoggle[] = { "dwm_tptoggle", NULL };
-static const char *gdict[] = { "goldendict", NULL };
 static const char *paste_x[] = { "dwm_paste_x", NULL };
 static const char *paste_c[] = { "dwm_paste_x", "-c", NULL };
 static const char *quick_type[] = { "dwm_quick_type", "_run", NULL };
 static const char *killibus[] = { "dwm_re_ibus", NULL };
+static const char *usbconnect[] = { "dwm_usbconnect", NULL };
 
 static const char *xscreensaver_custom[] = { "dwm_xscreensaver_error", "-lock", NULL };
 static const char *xscreensaver_blank[] = { "dwm_xscreensaver_blank", "-lock", NULL };
@@ -96,7 +96,6 @@ static Key keys[] = {
     { MODKEY,                       XK_period,                  spawn,          {.v = termcmd } },
     { MODKEY,                       XK_comma,                   spawn,          {.v = browser } },
     { MODKEY,                       XK_p,                       spawn,          {.v = ibus } },
-    { MODKEY,                       XK_u,                       spawn,          {.v = gdict } },
     { MODKEY,                       XK_b,                       togglebar,      {0} },
     { MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
@@ -129,6 +128,7 @@ static Key keys[] = {
     { MODKEY,                       XK_apostrophe,              spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_s,                       spawn,          {.v = quick_type } },
     { MODKEY|ShiftMask,             XK_i,                       spawn,          {.v = killibus } },
+    { MODKEY|ShiftMask,             XK_u,                       spawn,          {.v = usbconnect } },
 
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
