@@ -128,7 +128,7 @@ static Key keys[] = {
     { MODKEY,                       XK_apostrophe,              spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_s,                       spawn,          {.v = quick_type } },
     { MODKEY|ShiftMask,             XK_i,                       spawn,          {.v = killibus } },
-    { MODKEY|ShiftMask,             XK_u,                       spawn,          {.v = usbconnect } },
+    { MODKEY|ShiftMask,             XK_F5,                      spawn,          {.v = usbconnect } },
 
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
