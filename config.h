@@ -9,8 +9,15 @@ static const char normbordercolor[] = "#000000";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#49e20e";
 static const char selbordercolor[]  = "#49e20e";
-static const char selbgcolor[]      = "#000000";
+static const char selbgcolor[]      = "#555555";
 static const char selfgcolor[]      = "#49e20e";
+
+/* static const char normbordercolor[] = "#444444"; */
+/* static const char normbgcolor[]     = "#222222"; */
+/* static const char normfgcolor[]     = "#bbbbbb"; */
+/* static const char selbordercolor[]  = "#005577"; */
+/* static const char selbgcolor[]      = "#005577"; */
+/* static const char selfgcolor[]      = "#eeeeee"; */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
@@ -19,7 +26,6 @@ static const Bool statusmarkup      = True;     /* True means use pango markup i
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-/* static const char *tags[] = { "일", "이", "삼", "사", "오", "육", "칠", "팔", "구" }; */
 
 static const Rule rules[] = {
    /* class      instance    title       tags mask     isfloating   monitor */
